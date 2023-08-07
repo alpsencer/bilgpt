@@ -54,32 +54,31 @@ export default function Home() {
     }
   }, [messages]);
 
-  //handle form submission
-  async function handleSubmit(e: any) {
+  async function handleSubmit(e: any, question?: string) {
     e.preventDefault();
-
+  
     setError(null);
-    if (!query) {
+    if (!question && !query) {
       alert('Please input a question');
       return;
     }
-
-    const question = query.trim();
-
+  
+    const inputQuestion = question ? question.trim() : query.trim();
+  
     setMessageState((state) => ({
       ...state,
       messages: [
         ...state.messages,
         {
           type: 'userMessage',
-          message: question,
+          message: inputQuestion,
         },
       ],
     }));
-
+  
     setLoading(true);
     setQuery('');
-
+  
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -87,13 +86,13 @@ export default function Home() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          question,
+          question: inputQuestion,
           history,
         }),
       });
       const data = await response.json();
       console.log('data', data);
-
+  
       if (data.error) {
         setError(data.error);
       } else {
@@ -107,13 +106,13 @@ export default function Home() {
               sourceDocs: data.sourceDocuments,
             },
           ],
-          history: [...state.history, [question, data.text]],
+          history: [...state.history, [inputQuestion, data.text]],
         }));
       }
       console.log('messageState', messageState);
-
+  
       setLoading(false);
-
+  
       //scroll to bottom
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
@@ -135,14 +134,8 @@ export default function Home() {
   };
 
   const handleQueryClick = (newQuery: string) => {
-    setQuery(newQuery);
+    handleSubmit(new Event('click'), newQuery);
   };
-
-  useEffect(() => {
-    if (query) {
-      handleSubmit(new Event('click'));
-    }
-  }, [query]);
 
   return (
     <>
