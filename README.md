@@ -1,12 +1,9 @@
-# GPT-4 & LangChain - Create a ChatGPT Chatbot for Your PDF Files
+# Bilkent AI Bilgpt Chatbot
 
-Use the new GPT-4 api to build a chatGPT chatbot for multiple Large PDF files.
+ Bilkent AI Bilgpt Chatbot is an advanced chatbot powered by the GPT-4 API. It is specifically designed to assist individuals in obtaining comprehensive information about the Bilkent AI Society. With its intelligent capabilities, the chatbot aims to provide valuable insights and knowledge regarding the society's activities, projects, events, and initiatives. Whether you are curious about the society's educational programs, technical skills, or key projects, the chatbot is here to offer detailed and informative responses. By leveraging the power of artificial intelligence, the chatbot strives to enhance the learning experience and provide users with a richer understanding of the Bilkent AI Society.
 
-Tech stack used includes LangChain, Pinecone, Typescript, Openai, and Next.js. LangChain is a framework that makes it easier to build scalable AI/LLM apps and chatbots. Pinecone is a vectorstore for storing embeddings and your PDF in text to later retrieve similar docs.
 
-[Tutorial video](https://www.youtube.com/watch?v=ih9PBGVVOO4)
-
-[Join the discord if you have questions](https://discord.gg/E4Mc77qwjm)
+This project is based on the [GPT 4 Chatbot Langchain](https://github.com/mayooear/gpt4-pdf-chatbot-langchain) created by [mayooear](https://github.com/mayooear).
 
 The visual guide of this repo and tutorial is in the `visual guide` folder.
 
