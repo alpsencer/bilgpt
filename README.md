@@ -2,6 +2,8 @@
 
  BilGPT is an advanced chatbot currently powered by the GPT-4 API. It is specifically designed to assist individuals in obtaining comprehensive information about the Bilkent AI Society. With its intelligent capabilities, the chatbot aims to provide valuable insights and knowledge regarding the society's activities, projects, events, and initiatives. Whether you are curious about the society's educational programs, technical skills, or key projects, the chatbot is here to offer detailed and informative responses. By leveraging the power of artificial intelligence, the chatbot strives to enhance the learning experience and provide users with a richer understanding of the Bilkent AI Society.
 
+###  [Try BilGPT: chat.bilkentai.com](https://chat.bilkentai.com)
+
 The visual guide of this repo and tutorial is in the `visual guide` folder.
 
 **If you run into errors, please review the troubleshooting section further down this page.**
